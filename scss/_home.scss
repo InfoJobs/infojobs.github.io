@@ -1,0 +1,157 @@
+$margin: 20px;
+$half: $margin / 2;
+
+html,
+body{
+	background: #fff;
+	height: 100%;
+	color: #fff;
+}
+h1{
+	display: none;
+}
+h2,h3{
+	line-height: 1em;
+}
+h2{
+	font-family: $basefontextrabold;
+	font-size: 36px;
+}
+h3{
+	font-family: $basefont;
+	font-size: 18px;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+section{
+	position: fixed;
+	width: 50%;
+	height: 100%;
+	bottom: 0;
+	top: 0;
+	
+	&.left{
+		left: 0;
+		right: 50%;
+
+		article{
+			right: $half;
+		}
+	}
+	&.right{
+		right: 0;
+		left: 50%;
+		
+		article{
+			left: $half;
+		}
+	}
+}
+
+article{
+	bottom: $margin;
+	top: $margin;
+	right: $margin;
+	left: $margin;
+	position: absolute;
+	text-align: center;
+	overflow: hidden;
+
+	&.top,
+	&.bottom{
+		height: auto;
+	}
+	&.top{
+		bottom: 50%;
+		top: $margin;
+		margin-bottom: $half;
+	}
+	&.bottom{
+		top: 50%;
+		bottom: $margin;
+		margin-top: $half;
+	}
+	
+	//&:before,
+	&:after,
+	.vertical{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	.vertical{
+		height: auto;
+		position: relative;
+		z-index: 10;
+	}
+	.background,
+	.overlay-color,
+	.overlay{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+
+		@include transition(0.34s);
+	}
+	.overlay{
+		background: rgba(0,0,0,0.5);
+	}
+	.overlay-color{
+		opacity: 0;
+		@include vertical($bamboo, $dayblue);
+	}
+	.background{
+		background-position: 50%;
+		background-size: cover;
+
+		@include scale(1.2);
+	}
+	&.brand .background{
+		background-image: url('../images/brand.jpg');
+	}
+	&.mikado .background{
+		background-image: url('../images/mikado.jpg');
+	}
+	&.rubik .background{
+		background-image: url('../images/rubik.jpg');
+	}
+	&:hover{
+		.overlay-color{
+			opacity: 0.5;
+		}
+		.background{
+			@include scale(1);
+		}
+	}
+}
+
+@media all and (orientation: portrait) and (max-width: 670px){
+	section{
+		&.left,
+		&.right{
+			position: static;
+			height: auto;
+
+			article{
+				left: $margin;
+				right: $margin;
+				//height: (100% / 3);
+				bottom: auto;
+				margin: $half 0px;
+				z-index: 4;
+
+				&.brand		{top: 0 * 100% / 3; bottom: 2 * 100% / 3; margin-top: $margin;}
+				&.mikado	{top: 1 * 100% / 3; bottom: 1 * 100% / 3;}
+				&.rubik		{top: 2 * 100% / 3; bottom: 0 * 100% / 3; margin-bottom: $margin;}
+			}
+		}
+	}
+}
