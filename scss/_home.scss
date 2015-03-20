@@ -1,6 +1,8 @@
 $margin: 20px;
 $half: $margin / 2;
 
+$mobile-width: 680px;
+
 html,
 body{
 	background: #fff;
@@ -106,6 +108,7 @@ article{
 	}
 	.overlay-color{
 		opacity: 0;
+		background-image: url("../images/brand.jpg");
 		@include vertical($bamboo, $dayblue);
 	}
 	.background{
@@ -133,7 +136,7 @@ article{
 	}
 }
 
-@media all and (orientation: portrait) and (max-width: 670px){
+@media all and (orientation: portrait) and (max-width: $mobile-width){
 	section{
 		&.left,
 		&.right{
@@ -151,6 +154,51 @@ article{
 				&.brand		{top: 0 * 100% / 3; bottom: 2 * 100% / 3; margin-top: $margin;}
 				&.mikado	{top: 1 * 100% / 3; bottom: 1 * 100% / 3;}
 				&.rubik		{top: 2 * 100% / 3; bottom: 0 * 100% / 3; margin-bottom: $margin;}
+			}
+		}
+	}
+}
+
+@media all and (max-width: $mobile-width){
+	section{
+		&.left{
+			article{
+				right: ($half / 2);
+			}
+		}
+		&.right{
+			article{
+				left: ($half / 2);
+			}
+		}
+	}
+	article{
+		bottom: ($margin / 2);
+		top: ($margin / 2);
+		right: ($margin / 2);
+		left: ($margin / 2);
+
+		&.top{
+			top: ($margin / 2);
+			margin-bottom: ($half / 2);
+		}
+		&.bottom{
+			bottom: ($margin / 2);
+			margin-top: ($half / 2);
+		}
+	}
+}
+@media all and (orientation: portrait) and (max-width: $mobile-width){
+	section{
+		&.left,
+		&.right{
+			article{
+				left: ($margin / 2);
+				right: ($margin / 2);
+				margin: ($half / 2) 0px;
+
+				&.brand		{margin-top: ($margin / 2);}
+				&.rubik		{margin-bottom: ($margin / 2);}
 			}
 		}
 	}
