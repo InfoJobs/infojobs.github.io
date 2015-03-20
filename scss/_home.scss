@@ -108,7 +108,8 @@ article{
 	}
 	.overlay-color{
 		opacity: 0;
-		background-image: url("../images/brand.jpg");
+		background-image: url("../images/gradiant.png");
+		background-size: 100% 100%;
 		@include vertical($bamboo, $dayblue);
 	}
 	.background{
