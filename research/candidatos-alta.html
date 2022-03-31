@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="resources/lottie.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="resources/style.css">
+  <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <title>Regístrate para participar</title>
+  <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+</head>
+<body>
+    <div class="header">
+        <a onclick="document.location='candidatos-participar.html'">
+        <img class="header-logo" src="resources/ij-logo-default.svg" alt="InfoJobs">
+        </a>
+    </div>
+    <div class="content anim FU">
+        <section id="section" class="section p-20 first-section row">
+            <div class="col-4 lottie-ilustration">
+                <div class="col-child">
+                    <div class="lottie-onboarding" id="onboarding-4" alt="dos personas miran un móvil"></div>
+                </div>
+            </div>
+            <div class="col-8" style="margin-top:32px;">
+                <div class="col-child">
+                    <h1 class="heading-1">Regístrate y participa en los estudios de InfoJobs</h1>
+                    <p class="body-1" style="padding-right:24px;">
+                        Queremos asegurar que escuchamos a <b>personas con diferentes perspectivas</b> y por ello te preguntamos por detalles como género, área geográfica, estudios o edad. 
+                    </p>
+                    <p class="body-1" style="padding-right:24px;">
+                        Los estudios se realizan mediante <b>videollamada o llamada telefónica.</b> 
+                    </p>
+                    <p class="body-1" style="padding-right:24px;">
+                        Tu privacidad es muy importante para nosotros, al inscribirte para participar en nuestros estudios estás aceptando nuestras <a onclick="document.location='candidatos-condiciones.html'">condiciones generales de uso y protección de datos</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="section" class="section form-embed">
+                <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script><iframe class="airtable-embed airtable-dynamic-height" src="https://airtable.com/embed/shrUFCGn2ANRawg9H?backgroundColor=blue" frameborder="0" onmousewheel="" width="100%" height="3006" style="background: transparent; border: none;"></iframe>
+        </section>
+        <section id="section" class="section p-20 row">
+            <div class="col-child button-link-group">
+                 <button class="button button-link"><a onclick="document.location='candidatos-condiciones.html'"> Condiciones legales de uso </a></button>
+                 <button class="button button-link"><a onclick="document.location='candidatos-baja.html'"> Darme de baja</a></button>
+            </div>
+        </section>
+    </div>
+            <script type="text/javascript">var animate = {
+                    'time': 300,
+                    'randMin': 1000,
+                    'randMax': 1200
+                };
+
+                (function ($) {
+
+                    function rand(min, max) {
+                        return Math.floor((Math.random() * (max - min + 1)) + min);
+                    }
+
+                    var defaults = {
+                        'randMin': 100,
+                        'randMax': 2000,
+                        'time': 1000
+                    };
+
+                    $(function () {
+
+                        var settings = $.extend(defaults, animate);
+
+                        $('a.animate').click(function (e) {
+                            e.preventDefault();
+
+                            var obj = $(this);
+                            var time = settings.time;
+
+                            if (obj.hasClass('rand')) {
+
+                                time = rand(settings.randMin, settings.randMax);
+
+                            } else {
+
+                                var result = /time[0-9]+/.exec(obj.attr('class'));
+                                if (result)
+                                    time = parseInt(new String(result).replace('time', ''));
+
+                            }
+
+                            $('html, body').animate({
+                                scrollTop: $(obj.attr('href')).offset().top
+                            }, time);
+
+                        });
+
+                    });
+                })(jQuery);</script>
+            <script src="resources/onboarding-4.js" type="text/javascript"></script>
+
+</body>
+</html>
+
