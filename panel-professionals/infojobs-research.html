@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="../resources/lottie.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="../resources/style.css">
+  <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <title>Ayúdanos a mejorar InfoJobs</title>
+  <link rel="icon" type="image/x-icon" href="../resources/favicon.ico">
+</head>
+<body>
+    <div class="header">
+        <a onclick="document.location='infojobs-research.html'">
+        <img class="header-logo" src="../resources/ij-logo-default.svg" alt="InfoJobs">
+        </a>
+    </div>
+    <div class="content anim FU">
+        <section id="section" class="section p-20 first-section row">
+            <div class="col-4 lottie-ilustration">
+                <div class="col-child">
+                    <div class="lottie-onboarding" id="onboarding-1" alt="dos personas miran un móvil"></div>
+                </div>
+            </div>
+            <div class="col-8" style="margin-top:32px;">
+                <div class="col-child">
+                    <h1 class="heading-1">Queremos conocer tu opinión</h1>
+                    <p class="body-1" style="padding-right:24px;">
+                        Comparte lo que piensas sobre InfoJobs y el empleo participando en nuestros estudios.
+                    </p>
+                    <p class="body-1" style="padding-right:24px;">
+                        Colabora con nosotros para ayudar a los profesionales a encontrar trabajo y a las empresas a encontrar profesionales.
+                    </p>
+                    <button onclick="document.location='infojobs-research-form.html'" class="button button-accent" style="margin-top:8px;">
+                        <span> Inscribirme para participar </span>
+                    </button>
+                </div> 
+            </div>
+        </section>
+
+        <section id="section" class="section p-20 row">
+            <h2 class="heading-2">¿Cómo puedes participar?</h2>
+            <div class="onbo-elevation">
+            <div class="onbo-cell col-4 col-s-12" alt="Regístrate">
+                <div class="col-child p-20">
+                    <img alt="" src="../resources/img-check.png" style="margin-bottom:32px;">
+                    <p class="heading-3">Inscríbete</p>
+                    <p class="body-2">Rellena el formulario de registro. Nos ayudará que lo completes con la mayor cantidad de información posible dado que buscamos personas con diferentes puntos de vista.</p>
+                </div>
+            </div>
+            <div class="onbo-cell col-4 col-s-12" alt="Participa">
+                <div class="col-child p-20">
+                    <img alt="" src="../resources/img-form.png" style="margin-bottom:32px;">
+                    <p class="heading-3">Participa</p>
+                    <p class="body-2">Si te invitamos a participar, te enviaremos una invitación para realizar el estudio de forma remota a través de tu teléfono, ordenador o tablet.</p>
+                </div>
+            </div>
+            <div class="onbo-cell col-4 col-s-12" style="margin-right:0px;" alt="Obtén recompensas">
+                <div class="col-child p-20">
+                    <img alt="" src="../resources/img-present.png" style="margin-bottom:32px;">
+                    <p class="heading-3">Recibe tu recompensa</p>
+                    <p class="body-2">Recibirás un obsequio de agradecimiento en forma de tarjeta regalo por tu ayuda. El equipo de InfoJobs te estaremos eternamente agradecidos por tu contribución a hacernos mejores.</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="section" class="section p-20 mb-80 row">
+            <div class="col-child">
+                <h2 class="heading-2">Ayúdanos a mejorar</h2>
+                <p class="body-1" style="padding-right:24px;">
+                    Si te seleccionamos para un próximo estudio nos pondremos en contacto contigo para darte detalles sobre los siguientes pasos. 
+                </p>
+                <p class="body-1" style="padding-right:24px;">
+                    Todas las opiniones nos resultan útiles, por lo que te animamos a apuntarte y ayudarnos a mejorar InfoJobs.
+                </p>
+                <button onclick="document.location='infojobs-research-form.html'" class="button button-accent" style="margin-top:8px;">
+                    <span> Inscribirme para participar </span>
+                </button>
+            </div>
+        </section>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <img class="header-logo" src="../resources/ij-logo-default.svg" alt="InfoJobs">
+        </div>
+        <div class="footer-content p-t-16">
+            <button class="button button-link"><a onclick="document.location='infojobs-research-terms.html'"> Condiciones legales de uso </a></button>
+            <button class="button button-link"><a onclick="document.location='infojobs-research-unsubscribe.html'"> Darme de baja</a></button>
+        </div>
+    </div>
+            <script type="text/javascript">var animate = {
+                    'time': 300,
+                    'randMin': 1000,
+                    'randMax': 1200
+                };
+
+                (function ($) {
+
+                    function rand(min, max) {
+                        return Math.floor((Math.random() * (max - min + 1)) + min);
+                    }
+
+                    var defaults = {
+                        'randMin': 100,
+                        'randMax': 2000,
+                        'time': 1000
+                    };
+
+                    $(function () {
+
+                        var settings = $.extend(defaults, animate);
+
+                        $('a.animate').click(function (e) {
+                            e.preventDefault();
+
+                            var obj = $(this);
+                            var time = settings.time;
+
+                            if (obj.hasClass('rand')) {
+
+                                time = rand(settings.randMin, settings.randMax);
+
+                            } else {
+
+                                var result = /time[0-9]+/.exec(obj.attr('class'));
+                                if (result)
+                                    time = parseInt(new String(result).replace('time', ''));
+
+                            }
+
+                            $('html, body').animate({
+                                scrollTop: $(obj.attr('href')).offset().top
+                            }, time);
+
+                        });
+
+                    });
+                })(jQuery);</script>
+            <script src="../resources/onboarding-1.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -130,14 +130,68 @@ b {
 } 
 
 .onbo-cell{
+  margin-right: 16px;
+}
+
+.onbo-elevation{
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 24px 0 rgb(0 0 0 / 8%);
-  margin-right: 16px;
-  min-height: 400px;
+  box-shadow: 0 4px 24px 0 rgb(22, 125, 183, 0.08);
+  min-height: auto;
+    overflow: hidden;
 }
 
 
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: none;
+  border-top: none;
+}
+
+.tabgroup{
+    position: relative;
+    margin: 16px auto 24px;
+    display: flex;
+    padding: 0px;
+    border-bottom: 1px solid #CCC;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.tablink {
+  background-color: inherit;
+  float: left;
+  width: 100%;
+  outline: none;
+  padding: 16px;
+  transition: 0.3s;
+  font-size: 16px;
+  display: block;
+    color: #5E6061;
+    text-transform: uppercase;
+    background-color: white !important;
+    border: none;
+    font-weight: 600;
+    border-bottom: 4px solid white;
+}
+
+
+.tablink:hover {
+    background-color: white !important;
+    color:#167DB7 !important;
+    cursor: pointer !important;
+    border-bottom: 4px solid white;
+}
+
+
+.isOpen {
+    background-color: white !important;
+    color:#167DB7 !important;
+    cursor: pointer !important;
+    border-bottom: 4px solid #167DB7 !important;
+}
 
 /* ONBOARDING */
 
@@ -171,7 +225,7 @@ b {
   width: 100%;
   border: none;
   padding: 0;
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 
@@ -212,6 +266,15 @@ b {
   max-height: 100%;
   display: inline-block;
 }
+.section-tab{
+margin: 0 auto;
+  height: 100%;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 16px;
+  padding-bottom: 80px;
+  max-height: 100%;
+}
 
 .sections a {
   cursor: pointer;
@@ -242,6 +305,7 @@ b {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
 
 .form-embed{
   width: 100%
@@ -293,8 +357,8 @@ text-decoration-line: none;
 padding: 0 2px;
 }
 .button-link{
-background: #ffffff;
-border-color: #ffffff;
+background: transparent;
+border-color: transparent;
 color: #167DB7;
 text-decoration-line: none;
 padding: 0;
@@ -328,11 +392,26 @@ text-decoration: underline;
 .header-logo{
   position: relative;
   margin: 0 auto;
-  width: 120px;
+  width: auto;
+  height: 24px;
   display: block;
-  padding-top: 18px;
+  padding-top: 22px;
 }
 
+.footer{
+    background-color: #F3F9FB;
+    padding: 24px;
+}
+
+.footer-content{
+    position: relative;
+  margin: 0 auto;
+  width: fit-content;
+  height: auto;
+  display: block;
+  background-color: transparent;
+
+}
 
 /* MEDIA QUERIES */
 @media only screen and (max-width: 1000px) {
@@ -355,6 +434,9 @@ text-decoration: underline;
   .lottie-onboarding {margin: 0 auto;}
   .button-link {margin-left: 0; margin-bottom: 8px;}
   .button-link-group {display: table-caption;}
+  .heading-1 {font-size: 2.5em;}
+    .tabgroup{padding: 0px; margin: 0 auto;}
+    .tablink{padding: 16px 8px;}
 }
 
 @media only screen and (max-width: 900px) {
@@ -399,12 +481,19 @@ text-decoration: underline;
 .p-t-40{
   padding-top: 40px;
 }
+.p-t-16{
+  padding-top: 16px;
+}
 .p-40{
   padding: 40px;
 }
 .mt-40{
   margin-top: 40px;
 }
+.mb-80{
+  margin-bottom: 80px;
+}
+
 
 /* ANIMATION */
 
